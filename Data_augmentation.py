@@ -4,7 +4,33 @@ import math
 
 class Data_augmentation:
     def __init__(self, image, angle, flip_image, point=None, keep_size=False):
+        """
+        需要參數:
+            image       --需要是已經讀入的圖片array。
+            angle       --旋轉角度。
 
+        可給也可以不給:
+            point       --左上右下座標
+                            一組 : point = [ [left_top_X,left_top_Y , right_down_X,right_down_Y] ]。
+
+                            多組 : point = [ [left_top_X,left_top_Y , right_down_X,right_down_Y],
+                                            [left_top_X,left_top_Y , right_down_X,right_down_Y],
+                                            [left_top_X,left_top_Y , right_down_X,right_down_Y] ]。
+
+            keep_size   --圖片是否要超出邊界。
+
+        -------------------------------
+        GET -可以取得的資源
+
+        get_after_spin_image()  --取得旋轉後的圖片。
+        get_after_spin_point()  --取的旋轉後的座標。
+        get_yolo_point()  --取得將原始座標成yolo座標
+
+        -------------------------------
+        SAVE -可以儲存的資源
+        save_yolo_point_txt(save_path)  --將座標轉換成yolo座標後輸出txt至指定路徑
+
+        """
         self.image = image
         self.angle = angle
         self.point = point
