@@ -5,6 +5,7 @@ import math
 class Data_augmentation:
     def __init__(self, image, angle, flip_image, point=None, keep_size=False):
         """
+
         需要參數:
             image       --需要是已經讀入的圖片array。
             angle       --旋轉角度。
